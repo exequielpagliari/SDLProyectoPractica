@@ -54,7 +54,9 @@ jobs:
       shell: bash
       run: |
         echo "build-output-dir=${{ github.workspace }}/build" >> "$GITHUB_OUTPUT"
-
+    
+    - name: Get project sources
+      uses: actions/checkout@v3
     - name: Configure CMake
       run: cmake -B build ${{ matrix.os }}
     - name: Build
