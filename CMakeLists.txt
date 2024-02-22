@@ -28,6 +28,6 @@ add_executable(SDL2Test WIN32 	main.cpp
 				includes/Vector2D.h
 				src/Tortuga.cpp
 				includes/Tortuga.h
-				Assets/player_sheet.png)
+				)
 
 target_link_libraries(SDL2Test ${SDL2_LIBRARIES} ${SDL2_IMAGE_LIBRARIES})
