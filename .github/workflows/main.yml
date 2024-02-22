@@ -30,3 +30,15 @@ jobs:
       run: |
         cd build
         ctest --output-on-failure
+
+
+  test_Windows:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Build
+      run: |
+        g++ --version
+        make
+    - name: Test
+      run: ./run_tests.bat
