@@ -1,1 +1,3 @@
-﻿  SDLImagen.vcxproj -> C:\Users\exepa\source\repos\SDLImagen\x64\Debug\SDLImagen.exe
+﻿  main.cpp
+C:\Users\exepa\source\repos\SDLImagen\SDLImagen\main.cpp(8,32): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  SDLImagen.vcxproj -> C:\Users\exepa\source\repos\SDLImagen\x64\Debug\SDLImagen.exe
