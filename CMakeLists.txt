@@ -1,31 +1,33 @@
-cmake_minimum_required(VERSION 3.0)
-project(TuProyecto)
+cmake_minimum_required(VERSION 3.10)
 
-# Agrega aquí tus archivos fuente
-set(SOURCES
-    Enemy.cpp
-    Game.cpp
-    SDLGameObject.cpp
-    TextureManager.cpp
-    Tortuga.cpp
-    main.cpp
-)
+project(SDL2Test)
 
-# Agrega aquí tus archivos de encabezado
-set(HEADERS
-    Enemy.h
-    Game.h
-    GameObject.h
-    LoaderParams.h
-    SDLGameObject.h
-    TextureManager.h
-    Tortuga.h
-)
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/")
 
-# Añade el ejecutable
-add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
-
-# Configura SDL2
 find_package(SDL2 REQUIRED)
+find_package(SDL2_image REQUIRED)
 include_directories(${SDL2_INCLUDE_DIRS})
-target_link_libraries(${PROJECT_NAME} ${SDL2_LIBRARIES})
+include_directories(${SDL2_IMAGE_INCLUDE_DIRS})
+INCLUDE_DIRECTORIES("includes")
+INCLUDE_DIRECTORIES("Assets")
+# Se añade el directorio a la ruta de búsqueda del compilador de turno
+FILE(GLOB MiProyecto_SRC "src/*.cpp")
+FILE(GLOB MiProyecto_SRC "includes/*.h")
+# FILE GLOB selecciona todos los archivos que cumplan la característica y los almacena en MiProyecto_SRC
+# GLOB no es recursivo. Si lo necesitas, usa GLOB_RECURSE
+
+add_executable(SDL2Test WIN32 	main.cpp  
+			      	src/Enemy.cpp
+				includes/Enemy.h
+			      	src/Game.cpp
+			      	includes/Game.h
+				src/SDLGameObject.cpp
+				includes/SDLGameObject.h
+				src/TextureManager.cpp
+				includes/TextureManager.h
+				includes/Vector2D.h
+				src/Tortuga.cpp
+				includes/Tortuga.h
+				Assets/player_sheet.png)
+
+target_link_libraries(SDL2Test ${SDL2_LIBRARIES} ${SDL2_IMAGE_LIBRARIES})

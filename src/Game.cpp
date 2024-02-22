@@ -58,7 +58,7 @@ int m_currentFrame;
 		std::cout << "init success\n";
 		m_bRunning = true; // everything inited successfully, start the main loop
 
-		TextureManager::Instance()->load("assets/player_sheet.png", "animate", m_pRenderer);
+		TextureManager::Instance()->load("player_sheet.png", "animate", m_pRenderer);
 		
 		
 
