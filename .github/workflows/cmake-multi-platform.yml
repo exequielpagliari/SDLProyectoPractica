@@ -47,7 +47,7 @@ jobs:
     steps:
     
     - name: Install SDL
-      run: sudo apt-get install -y libxml2-utils sudo apt-get install cmake ninja-build libgl1-mesa-dev libglu1-mesa-dev
+      run: sudo apt-get install -y libxml2-utils cmake ninja-build libgl1-mesa-dev libglu1-mesa-dev
     - name: Set reusable strings
       # Turn repeated input strings (such as the build output directory) into step outputs. These step outputs can be used throughout the workflow file.
       id: strings
